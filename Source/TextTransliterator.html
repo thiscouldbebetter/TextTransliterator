@@ -1,0 +1,371 @@
+<html>
+
+<body>
+
+	<div id="divUi">
+
+		<h3>Text Transliterator</h3>
+		<p>
+			Specify some text to transliterate, click the Extract button
+			to extract the unique characters from it, specify the proper
+			transliteration mappings, then click the Transliterate button
+			to transliterate.
+		</p>
+
+		<label>Text to Transliterate:</label>
+		<br />
+		<textarea id="textareaTextToTransliterate" cols="80" rows="12">
+μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος
+οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε,
+πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν
+ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν
+οἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή,
+ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε
+Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.
+τίς τ᾽ ἄρ σφωε θεῶν ἔριδι ξυνέηκε μάχεσθαι;
+Λητοῦς καὶ Διὸς υἱός: ὃ γὰρ βασιλῆϊ χολωθεὶς
+νοῦσον ἀνὰ στρατὸν ὄρσε κακήν, ὀλέκοντο δὲ λαοί,
+οὕνεκα τὸν Χρύσην ἠτίμασεν ἀρητῆρα
+Ἀτρεΐδης: ὃ γὰρ ἦλθε θοὰς ἐπὶ νῆας Ἀχαιῶν
+λυσόμενός τε θύγατρα φέρων τ᾽ ἀπερείσι᾽ ἄποινα,
+στέμματ᾽ ἔχων ἐν χερσὶν ἑκηβόλου Ἀπόλλωνος
+χρυσέῳ ἀνὰ σκήπτρῳ, καὶ λίσσετο πάντας Ἀχαιούς,
+Ἀτρεΐδα δὲ μάλιστα δύω, κοσμήτορε λαῶν:
+Ἀτρεΐδαι τε καὶ ἄλλοι ἐϋκνήμιδες Ἀχαιοί,
+ὑμῖν μὲν θεοὶ δοῖεν Ὀλύμπια δώματ᾽ ἔχοντες
+ἐκπέρσαι Πριάμοιο πόλιν, εὖ δ᾽ οἴκαδ᾽ ἱκέσθαι:
+παῖδα δ᾽ ἐμοὶ λύσαιτε φίλην, τὰ δ᾽ ἄποινα δέχεσθαι,
+ἁζόμενοι Διὸς υἱὸν ἑκηβόλον Ἀπόλλωνα.
+		</textarea>
+		<br />
+
+		<button onclick="buttonExtractUniqueCharacters_Clicked();">
+			Extract Unique Characters
+		</button>
+		<br />
+
+		<label>Transliteration Mappings:</label>
+		<br />
+		<textarea id="textareaTransliterationMappings" cols="80" rows="12">
+ΐ
+i
+
+Δ
+D
+
+Λ
+L
+
+Π
+P
+
+Χ
+Kh
+
+ά
+a
+
+έ
+e
+
+ή
+ee
+
+ί
+i
+
+α
+a
+
+β
+b
+
+γ
+g
+
+δ
+d
+
+ε
+e
+
+ζ
+z
+
+η
+ee
+
+θ
+th
+
+ι
+i
+
+κ
+k
+
+λ
+l
+
+μ
+m
+
+ν
+n
+
+ξ
+x
+
+ο
+o
+
+π
+p
+
+ρ
+r
+
+ς
+s
+
+σ
+s
+
+τ
+t
+
+υ
+u
+
+φ
+f
+
+χ
+kh
+
+ψ
+ps
+
+ω
+oh
+
+ϊ
+i
+
+ϋ
+u
+
+ό
+o
+
+ύ
+u
+
+ώ
+oh
+
+ἀ
+a
+
+ἁ
+a
+
+ἄ
+a
+
+Ἀ
+A
+
+Ἄ
+Ἄ
+
+ἐ
+e
+
+ἑ
+e
+
+ἔ
+e
+
+ἠ
+ee
+
+ἡ
+ee
+
+ἣ
+ee
+
+ἦ
+ee
+
+ἰ
+i
+
+ἱ
+i
+
+ἴ
+i
+
+ὀ
+o
+
+ὃ
+o
+
+ὄ
+o
+
+Ὀ
+O
+
+ὐ
+u
+
+ὑ
+u
+
+ὕ
+u
+
+ὖ
+u
+
+ὗ
+u
+
+ὰ
+a
+
+ὲ
+e
+
+ὴ
+ee
+
+ὶ
+i
+
+ὸ
+o
+
+ὺ
+u
+
+ᾶ
+a
+
+ῆ
+ee
+
+ῖ
+i
+
+ῦ
+u
+
+ῳ
+oh
+
+ῶ
+oh
+		</textarea>
+		<br />
+
+		<button onclick="buttonTransliterate_Clicked();">Transliterate</button>
+		<br />
+
+		<label>Text Transliterated:</label>
+		<br />
+		<textarea id="textareaTextTransliterated" cols="80" rows="12">
+		</textarea>
+		<br />
+
+	</div>
+
+<script type="text/javascript">
+
+function buttonExtractUniqueCharacters_Clicked()
+{
+	var d = document;
+	var textareaTextToTransliterate =
+		d.getElementById("textareaTextToTransliterate");
+	var textareaTransliterationMappings =
+		d.getElementById("textareaTransliterationMappings");
+	var textareaTextTransliterated =
+		d.getElementById("textareaTextTransliterated");
+
+	var textToTransliterate = textareaTextToTransliterate.value;
+
+	var whitespaceCharsToIgnoreAsString = " \t\r\n";
+	for (var i = 0; i < whitespaceCharsToIgnoreAsString.length; i++)
+	{
+		var whitespaceChar = whitespaceCharsToIgnoreAsString[i];
+		textToTransliterate =
+			textToTransliterate.split(whitespaceChar).join("");
+	}
+
+	var charsToTransliterateUnique = [];
+
+	while (textToTransliterate.length > 0)
+	{
+		var charToTransliterate = textToTransliterate[0];
+		charsToTransliterateUnique.push(charToTransliterate);
+		textToTransliterate =
+			textToTransliterate.split(charToTransliterate).join("");
+	}
+
+	var newline = "\n";
+	var transliterationMappingsAsStrings =
+		charsToTransliterateUnique.map(x => x + newline + x + newline);
+	transliterationMappingsAsStrings.sort();
+	var transliterationMappingsAsString =
+		transliterationMappingsAsStrings.join(newline);
+
+	textareaTransliterationMappings.value = transliterationMappingsAsString;
+}
+
+function buttonTransliterate_Clicked()
+{
+	var d = document;
+	var textareaTextToTransliterate =
+		d.getElementById("textareaTextToTransliterate");
+	var textareaTransliterationMappings =
+		d.getElementById("textareaTransliterationMappings");
+	var textareaTextTransliterated =
+		d.getElementById("textareaTextTransliterated");
+
+	var mappingsAsString =
+		textareaTransliterationMappings.value;
+	var newline = "\n";
+	var mappingsAsStrings =
+		mappingsAsString.split(newline + newline);
+	var mappingsAsStringPairs =
+		mappingsAsStrings.map(x => x.split(newline));
+
+	var textToTransliterate = textareaTextToTransliterate.value;
+	var textTransliterated = textToTransliterate;
+	for (var i = 0; i < mappingsAsStringPairs.length; i++)
+	{
+		var mappingAsStringPair = mappingsAsStringPairs[i];
+		var charToTransliterate = mappingAsStringPair[0];
+		var charTransliterated = mappingAsStringPair[1];
+		textTransliterated = textTransliterated.split
+		(
+			charToTransliterate
+		).join
+		(
+			charTransliterated
+		);
+	}
+
+	textareaTextTransliterated.value = textTransliterated;
+}
+
+</script>
+
+</body>
+
+</html>
